@@ -12,7 +12,7 @@ jobs:
     # 下载源码
     - name: Checkout
       uses: actions/checkout@master 
-      # 使用master分支
+      # 下载本次 tag标签标记 commitId代码
 
 
 
@@ -22,6 +22,7 @@ jobs:
     - run: npm install
     - run: npm run build
     - run: tar -zcvf release.tgz .nuxt static nuxt.config.js package.json package-lock.json pm2.config.json
+    # 基于这次的tag标签来下载依赖 打包 然后把 后续几个文件生成  tgz 压缩包
 
     # 发布 Release
     - name: Create Release
@@ -73,3 +74,5 @@ jobs:
           tar zxvf release.tgz
           npm install --production
           pm2 reload pm2.config.json
+
+          
