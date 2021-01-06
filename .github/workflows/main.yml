@@ -27,7 +27,7 @@ jobs:
       uses: actions/create-release@dev
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        开始创建写入到项目secrets的TOKEN
+        # 开始创建写入到项目secrets的TOKEN
       with:
         tag_name: ${{ github.ref }}
         release_name: Release ${{ github.ref }}
