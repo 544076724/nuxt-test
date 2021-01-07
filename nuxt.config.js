@@ -57,12 +57,12 @@ module.exports = {
   },
 
 
-  server: { //部署端口  和ip  0.0.0.0 对外暴露访问
+  server: { //端口  和主机host  0.0.0.0 在服务器中，0.0.0.0指的是本机上的所有IPV4地址，
     host: '0.0.0.0',
     port: 3000
   },
 
-  
+
   // 注册插件
   plugins: [ //插件机制，注册到nuxtconfig中,运行 Vue.js 应用程序之前执行 js 插件
     '~/plugins/request.js',
